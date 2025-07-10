@@ -7,7 +7,11 @@ import c2 from '../image/c2.jpg';
 import c3 from '../image/c3.jpg';
 import img from '../image/img3.jpg';
 import v1 from "../image/v1.png"
+import T1 from '../image/T1.jpg';
+import T2 from '../image/T2.jpg';
 import Carousel from "../components/carouser";
+import Pagenation from "../components/pagenation";
+
 
 export default function Home() {
   return (
@@ -338,83 +342,47 @@ export default function Home() {
 </div>
   </div>
 </section>
+<Pagenation/>
 
 <section className="w-full py-16 bg-black text-white border-t border-neutral-800">
   <div className="max-w-6xl mx-auto px-4">
+    {/* Heading */}
     <h2 className="text-3xl font-extrabold mb-10 flex items-center gap-2">
-      <span className="text-red-600 text-8xl">»</span> Testimonials
+      <span className="text-red-600 text-8xl">»</span>
+      Our Members <span className="text-[#D70E0E]">Transformation</span>
     </h2>
 
-    {/* Grid Layout */}
-    <div className="grid md:grid-cols-2 gap-10 items-start">
+    {/* Content Section */}
+    <div className="flex flex-col md:flex-row gap-10 items-start">
+      
       {/* Left Text */}
-      <div>
-        <h1 className="italic text-white text-2xl mb-4 w-full max-w-md">
-          “What our Member Says! <span className="text-red-500 text-2xl">Real experiences</span> from our
-          <span className="text-red-500 text-2xl"> valued members</span>”
-        </h1>
-        <p className="text-2xl text-white mt-10 mb-4">Give Your own Review!</p>
-        <button className="bg-red-600 hover:bg-red-700 w-[199px] text-white px-5 py-2 mt-10 rounded-full text-lg">
-          Write Review
-        </button>
+      <div className="md:w-1/2">
+        <p className="text-2xl font-bold italic leading-loose pl-2 text-white">
+          <span className="text-[#D70E0E]">"Member Success Stories!</span><br />
+          See the incredible fitness <br />
+          journeys of our community <br />
+          members"
+        </p>
       </div>
 
-      {/* Testimonials Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-        {/* Testimonial 1 */}
-        <div className="bg-[#1a1a1a] p-4 rounded-xl text-center h-full">
-          <img
-            src="https://via.placeholder.com/80x80.png?text=Arjun"
-            alt="Arjun"
-            className="w-20 h-20 rounded-full mx-auto mb-3 object-cover"
-          />
-          <h4 className="text-white font-semibold">Arjun</h4>
-          <p className="text-yellow-500 text-sm">★★★★★</p>
-          <p className="text-gray-400 text-sm mt-2">Highly equipped & friendly trainers!</p>
-        </div>
-
-        {/* Testimonial 2 */}
-        <div className="bg-[#1a1a1a] p-4 rounded-xl text-center h-full">
-          <img
-            src="https://randomuser.me/api/portraits/women/65.jpg"
-            alt="Priya"
-            className="w-20 h-20 rounded-full mx-auto mb-3 object-cover"
-          />
-          <h4 className="text-white font-semibold">Priya</h4>
-          <p className="text-yellow-400 text-sm">★★★★★</p>
-          <p className="text-gray-400 text-sm mt-2">I love the way they design the flow. Good space!</p>
-        </div>
+      {/* Right Images */}
+      <div className="md:w-1/2 grid grid-cols-2 gap-20">
+        <img
+          src={T1}
+          alt="Member 1"
+          className="rounded-xl h-[337px] w-[335px] "
+        />
+        <img
+          src={T2}
+          alt="Member 2"
+          className="rounded-xl h-[337px] w-[335px] "
+        />
       </div>
-    </div>
-
-    {/* Pagination */}
-    <div className="flex justify-center gap-3 mt-10">
-      <button className="w-8 h-8 rounded-full border border-white flex items-center justify-center">❮</button>
-      <button className="w-8 h-8 rounded-full bg-red-600 text-white">●</button>
-      <button className="w-8 h-8 rounded-full border border-white flex items-center justify-center">❯</button>
     </div>
   </div>
 </section>
 
-<section className="py-16 bg-black text-white">
-  <div className="max-w-6xl mx-auto px-4">
-    <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
-      <span className="text-red-600">»</span> Our Members <span className="text-red-500">Transformation</span>
-    </h2>
 
-    <p className="text-sm text-red-400 italic mb-10">
-      *Member Success Stories!* <br />
-      See the incredible fitness journeys of our community members*
-    </p>
-
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-      <img src="" alt="Member 1" className="rounded-xl object-cover h-[200px] w-full" />
-      <img src="" alt="Member 2" className="rounded-xl object-cover h-[200px] w-full" />
-      <img src="" alt="Member 3" className="rounded-xl object-cover h-[200px] w-full" />
-      <img src="" alt="Member 4" className="rounded-xl object-cover h-[200px] w-full" />
-    </div>
-  </div>
-</section>
 
 
 
