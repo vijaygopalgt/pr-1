@@ -75,7 +75,7 @@ export default function Benifits() {
                   <img
                     src={item.image}
                     alt={item.title}
-                    className="w-full h-full object-cover rounded-[16px]"
+                    className="w-full h-full object-cover rounded-[24px]"
                   />
                   <div className="absolute bottom-0 left-0 w-[104px] h-[77px] bg-red-600 text-white text-4xl font-bold rounded-3xl flex items-center justify-center shadow-lg">
                     {item.id}
