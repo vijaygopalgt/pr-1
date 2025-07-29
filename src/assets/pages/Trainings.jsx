@@ -5,10 +5,12 @@ import e2 from "../image/E2.jpg";
 import e3 from "../image/E3.png";
 import e4 from "../image/E4.png";
 import p1 from "../image/p1.jpg";
-import p2 from "../image/p2.jpg";
+import p2 from "../image/p6.jpg";
 import p3 from "../image/a5.jpg";
 import p4 from "../image/p4.jpg";
 import p5 from "../image/p5.jpg";
+import AR from "../image/Ar.png";
+
 
 export default function Trainings() {
   const [selectedTrainerId, setSelectedTrainerId] = useState(null);
@@ -83,7 +85,7 @@ export default function Trainings() {
         name: "Sneha",
         title: "Yoga",
         experience: "4+ Years Of Experience",
-        image:e4,
+        image: e4,
       },
     },
     {
@@ -101,7 +103,7 @@ export default function Trainings() {
         name: "Krishnan",
         title: "HIIT Instructor",
         experience: "2+ Years Of Experience",
-        image:e2,
+        image: e2,
       },
     },
   ];
@@ -112,48 +114,50 @@ export default function Trainings() {
 
   return (
     <>
-      <div className="w-full mt-8 border-t border-neutral-700" />
       <section className="py-16 bg-black text-white">
-        <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-12 flex items-center gap-2">
-            <span className="text-red-600">»</span> Training{" "}
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <h2 className="text-2xl md:text-3xl font-bold mb-12 flex items-center gap-2">
+            <img
+                      src={AR}
+                          alt="Gym Training"
+                          className=" w-[74px] h-[74px] "/> Training{" "}
             <span className="text-red-500">Programs</span>
           </h2>
 
-          <div className="flex flex-col gap-35">
+          <div className="flex flex-col gap-24 md:gap-35">
             {programs.map((program, index) => (
               <div
                 key={program.id}
-                className={`flex flex-col lg:flex-row items-center gap-25 ${
+                className={`flex flex-col ${
                   index % 2 !== 0 ? "lg:flex-row-reverse" : ""
-                }`}
+                } lg:flex-row items-center gap-10 md:gap-25`}
               >
                 {/* Image Section */}
                 <div className="w-full max-w-[502px]">
-                  <div className="relative w-full h-[378px]">
+                  <div className="relative w-full h-[260px] sm:h-[320px] md:h-[378px]">
                     <img
                       src={program.image}
                       alt={program.title}
                       className="w-full h-full object-cover rounded-xl"
                     />
-                    <div className="absolute bottom-0  w-[104px] h-[77px] bg-red-600 text-white text-4xl font-bold rounded-3xl flex items-center justify-center">
+                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 lg:left-auto lg:translate-x-0 w-[80px] h-[60px] md:w-[104px] md:h-[77px] bg-red-600 text-white text-3xl md:text-4xl font-bold rounded-2xl md:rounded-3xl flex items-center justify-center">
                       {program.id}
                     </div>
                   </div>
 
-                  <h4 className="mt-4 text-white text-2xl font-extrabold text-center">
+                  <h4 className="text-[32px] font-bold mt-8  text-center bg-gradient-to-b from-[#FAFAFA] to-[#0A0A0A] bg-clip-text text-transparent">
                     {program.title}
                   </h4>
                 </div>
 
                 {/* Text Section */}
-                <div className="w-full max-w-[536px] h-[293px] border border-white rounded-[10px] p-6 flex flex-col items-center justify-between text-center">
-                  <div className="w-[409px] h-[88px] mt-10 italic flex items-center justify-center">
-                    <p className="text-white  text-xl">{program.description}</p>
+                <div className="w-full max-w-[536px] border border-white rounded-[10px] p-4 md:p-6 flex flex-col items-center justify-between text-center">
+                  <div className="w-full md:w-[409px] min-h-[80px] md:h-[88px] mt-4 md:mt-10 italic flex items-center justify-center">
+                    <p className="text-white text-base md:text-xl">{program.description}</p>
                   </div>
                   <button
                     onClick={() => setSelectedTrainerId(program.id)}
-                    className="text-sm w-[187px] h-[45px] mb-10 bg-[#D70E0E] rounded-full"
+                    className="mt-6 md:mt-0 text-sm w-full sm:w-[187px] h-[45px] mb-4 md:mb-10 bg-[#D70E0E] rounded-full transition-transform hover:scale-105"
                   >
                     View Schedule
                   </button>
@@ -164,7 +168,7 @@ export default function Trainings() {
         </div>
       </section>
 
-      {/* Popup */}
+      {/* Trainer Popup */}
       {selectedTrainer && (
         <TrainerPopupModal
           trainer={selectedTrainer}

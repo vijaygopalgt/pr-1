@@ -1,6 +1,7 @@
 import React from 'react';
 import { Mail, Phone } from 'lucide-react';
-import img from '../image/img2.jpg'; 
+import img from '../image/img2.jpg';
+import AR from '../image/Ar.png';
 
 export default function Footer() {
   return (
@@ -8,70 +9,46 @@ export default function Footer() {
       <div className="max-w-[1329px] mx-auto flex flex-col lg:flex-row gap-12">
         {/* Left: Contact Form and Info */}
         <div className="flex-1">
-          <h2 className="text-3xl md:text-4xl font-extrabold tracking-wide mb-4 flex items-center gap-2 uppercase">
-  {/* White Chevron */}
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="28"
-    height="28"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="white"
-    strokeWidth="2.5"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    className="lucide lucide-chevron-right"
-  >
-    <path d="M9 18l6-6-6-6" />
-  </svg>
+          <h2 className="text-3xl md:text-4xl font-extrabold tracking-wide mb-6 flex items-center gap-2 uppercase">
+             <img
+                      src={AR}
+                          alt="Gym Training"
+                          className=" w-[74px] h-[74px] "></img><span > Contact us</span>
+          </h2>
 
-  {/* Red Chevron */}
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="28"
-    height="28"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="red"
-    strokeWidth="2.5"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    className="lucide lucide-chevron-right"
-  >
-    <path d="M9 18l6-6-6-6" />
-  </svg>
+          {/* Form Box */}
+          <div className="bg-black p-6 rounded-[10px]  mt-15 border border-white shadow-md w-[449px] h-[587px] max-w-full">
+            <h3 className="text-2xl mt-10 text-center italic mb-4">
+  <span className="text-white">Get</span>{" "}
+  <span className="text-[#D70E0E]">in Touch</span>
+</h3>
 
-  Contact us
-</h2>
-
-          <div className="bg-black p-6 rounded-[10px] border border-white shadow-md w-[449px] h-[587px]">
-
-            <h3 className="text-lg font-semibold mb-4 text-[#D70E0E]">Get in Touch</h3>
-            <form className="flex flex-col gap-4">
+            <form className="flex flex-col mt-15 gap-10">
               <input
                 type="text"
                 placeholder="Enter Your Name"
-                className="bg-transparent border border-white px-4 py-2 rounded outline-none"
+                className="bg-transparent border border-white px-4 py-3 rounded-[10px] placeholder:text-sm"
               />
               <input
                 type="email"
                 placeholder="Enter Your Mail"
-                className="bg-transparent border border-white px-4 py-2 rounded outline-none"
+                className="bg-transparent border border-white px-4 py-3 rounded-[10px] placeholder:text-sm"
               />
               <textarea
                 placeholder="Enter Your Message"
                 rows={4}
-className="bg-transparent border border-white px-4 py-2 rounded-[10px] w-[380px] h-[136px] resize-none outline-none"
+                className="bg-transparent border border-white px-4 py-3 rounded-[10px]  h-[136px] resize-none outline-none placeholder:text-sm"
               />
               <button
                 type="submit"
-                className="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-full font-semibold w-fit"
+                className="bg-red-600 hover:bg-[#D70E0E] text-white px-6 py-2 rounded-full h-[45px] font-semibold w-[294px] transition duration-300 self-center"
               >
                 Submit
               </button>
             </form>
           </div>
 
+          {/* Contact Info */}
           <div className="mt-6 text-sm">
             <p className="text-gray-300 mb-2">
               Reach out to us for <span className="text-red-500 font-medium">any queries</span>
@@ -88,7 +65,7 @@ className="bg-transparent border border-white px-4 py-2 rounded-[10px] w-[380px]
         </div>
 
         {/* Right: Image and Map */}
-        <div className="flex-1 flex flex-col gap-6">
+        <div className="flex-1 flex flex-col mt-39 gap-40">
           <img
             src={img}
             alt="Gym"
